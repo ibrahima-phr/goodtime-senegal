@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Délice Sénégal - Restos & Hôtels Thiès/Mbour</title>
+    <link rel="stylesheet" href="styleses.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Délice Sénégal</h1>
+            <p>Thiès & Mbour</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#restaurants">Restaurants</a></li>
+                <li><a href="#hotels">Hôtels</a></li>
+                <li><a href="#reservations">Réservations</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="auth-buttons">
+            <button id="login-btn">Connexion</button>
+            <button id="register-btn">Inscription</button>
+        </div>
+    </header>
+
+    <section id="accueil" class="hero">
+        <div class="hero-content">
+            <h2>Découvrez les meilleures tables et hôtels de Thiès et Mbour</h2>
+            <p>Réservation en ligne - Commandez en un clic - Service premium</p>
+            <div class="search-bar">
+                <input type="text" placeholder="Rechercher un restaurant ou hôtel...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <section id="restaurants" class="section">
+        <h2>Nos Restaurants Partenaires</h2>
+        <div class="filters">
+            <button class="filter-btn active" data-city="all">Tous</button>
+            <button class="filter-btn" data-city="thies">Thiès</button>
+            <button class="filter-btn" data-city="mbour">Mbour</button>
+            <button class="filter-btn" data-category="senegalese">Sénégalais</button>
+            <button class="filter-btn" data-category="international">International</button>
+            <button class="filter-btn" data-category="fastfood">Fast-Food</button>
+        </div>
+        <div class="restaurants-grid" id="restaurants-container">
+            <!-- Les restaurants seront ajoutés dynamiquement par JavaScript -->
+        </div>
+    </section>
+
+    <section id="hotels" class="section">
+        <h2>Nos Hôtels Partenaires</h2>
+        <div class="filters">
+            <button class="filter-btn active" data-city="all">Tous</button>
+            <button class="filter-btn" data-city="thies">Thiès</button>
+            <button class="filter-btn" data-city="mbour">Mbour</button>
+            <button class="filter-btn" data-category="luxe">Luxe</button>
+            <button class="filter-btn" data-category="standard">Standard</button>
+            <button class="filter-btn" data-category="economique">Économique</button>
+        </div>
+        <div class="hotels-grid" id="hotels-container">
+            <!-- Les hôtels seront ajoutés dynamiquement par JavaScript -->
+        </div>
+    </section>
+
+    <section id="reservations" class="reservation-section">
+        <div class="reservation-form">
+            <h2>Réservez en ligne</h2>
+            <form id="booking-form">
+                <div class="form-group">
+                    <label for="booking-type">Type de réservation</label>
+                    <select id="booking-type" required>
+                        <option value="">-- Sélectionnez --</option>
+                        <option value="restaurant">Restaurant</option>
+                        <option value="hotel">Hôtel</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="establishment">Établissement</label>
+                    <select id="establishment" required disabled>
+                        <option value="">-- Sélectionnez d'abord le type --</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="date">Date</label>
+                    <input type="date" id="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="time">Heure</label>
+                    <input type="time" id="time" required>
+                </div>
+                <div class="form-group">
+                    <label for="people">Nombre de personnes</label>
+                    <input type="number" id="people" min="1" required>
+                </div>
+                <div class="form-group">
+                    <label for="name">Nom complet</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Téléphone</label>
+                    <input type="tel" id="phone" required>
+                </div>
+                <button type="submit" class="submit-btn">Confirmer la réservation</button>
+            </form>
+        </div>
+        <div class="reservation-image">
+            <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="Table de restaurant">
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="contact-info">
+            <h2>Contactez-nous</h2>
+            <p><i class="fas fa-phone"></i> +221 78 598 09 68</p>
+            <p><i class="fas fa-envelope"></i> contactdelicesenegal@gmail.com</p>
+            <p><i class="fas fa-map-marker-alt"></i> Siège social: Thiès, Sénégal</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+        <div class="contact-map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3859.052249373929!2d-16.9261509246874!3d14.794375485842976!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xec1725c445f3267%3A0x3d6a5f5e9b4d4b1e!2sThi%C3%A8s%2C%20S%C3%A9n%C3%A9gal!5e0!3m2!1sfr!2sfr!4v1689876543210!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Délice Sénégal</h3>
+                <p>La référence pour vos réservations de restaurants et hôtels à Thiès et Mbour.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Liens rapides</h3>
+                <ul>
+                    <li><a href="#accueil">Accueil</a></li>
+                    <li><a href="#restaurants">Restaurants</a></li>
+                    <li><a href="#hotels">Hôtels</a></li>
+                    <li><a href="#reservations">Réservations</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Newsletter</h3>
+                <form id="newsletter-form">
+                    <input type="email" placeholder="Votre email" required>
+                    <button type="submit">S'abonner</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 Délice Sénégal. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Connexion</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="login-email">Email</label>
+                    <input type="email" id="login-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Mot de passe</label>
+                    <input type="password" id="login-password" required>
+                </div>
+                <button type="submit" class="submit-btn">Se connecter</button>
+            </form>
+            <p>Pas encore inscrit? <a href="#" id="show-register">Créer un compte</a></p>
+        </div>
+    </div>
+
+    <div id="register-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Inscription</h2>
+            <form id="register-form">
+                <div class="form-group">
+                    <label for="register-name">Nom complet</label>
+                    <input type="text" id="register-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-email">Email</label>
+                    <input type="email" id="register-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-phone">Téléphone</label>
+                    <input type="tel" id="register-phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-password">Mot de passe</label>
+                    <input type="password" id="register-password" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-confirm">Confirmer le mot de passe</label>
+                    <input type="password" id="register-confirm" required>
+                </div>
+                <button type="submit" class="submit-btn">S'inscrire</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="restaurant-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="restaurant-modal-content"></div>
+        </div>
+    </div>
+
+    <div id="hotel-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="hotel-modal-content"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
